@@ -8,12 +8,14 @@ class PrimeFactor:
                     factors.append(divisor)
                     number //= divisor
             elif number == 6:
-                if number % divisor == 0:
+                while number % divisor == 0:
                     factors.append(divisor)
                     number //= divisor
-                if number % 3 == 0:
-                    factors.append(3)
-                    number //= 3
+                divisor += 1
+                while number % divisor == 0:
+                    factors.append(divisor)
+                    number //= divisor
+                divisor += 1
             else:
                 factors.append(number)
         return factors
